@@ -1,0 +1,10 @@
+"C:\Program Files\BellSoft\LibericaJDK-20-Full\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\lib\idea_rt.jar=53197:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\242770\IdeaProjects\practic2\out\production\practice2 part1.part1_3.VarDemo
+42 -> Integer
+Java -> String
+[один, два] -> ArrayList
+[1, 2, 3] -> int[]
+Банковская система инициализирована
+Создание счёта #1
+BankAccount -> BankAccount
+
+Process finished with exit code 0
