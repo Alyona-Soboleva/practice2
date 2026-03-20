@@ -39,13 +39,16 @@ public class BankAccount {
         // TODO: bankName = "Java Bank"; выведите "Банковская система инициализирована"
         // ▼ ВАШ КОД ЗДЕСЬ ▼
         bankName = "Java Bank";
+        System.out.println("Банковская система инициализирована");
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     {
         // TODO: totalAccounts++; выведите "Создание счёта #" + totalAccounts
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        totalAccounts++;
+        System.out.println("Создание счёта #" + totalAccounts);
+        this.accountNumber = "ACC-" + totalAccounts;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -55,7 +58,8 @@ public class BankAccount {
      */
     public BankAccount(String owner, double initialBalance) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        this.owner=owner;
+        this.balance=initialBalance;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -64,7 +68,11 @@ public class BankAccount {
      */
     public void deposit(double amount) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        if (amount <= 0) {
+            System.out.println("Ошибка: сумма должна быть положительной");
+            return;
+        }
+        this.balance += amount;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -74,13 +82,19 @@ public class BankAccount {
      */
     public void withdraw(double amount) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        if (amount <=0) {
+            System.out.println("Ошибка: сумма должна быть положительной");
+        } else if (amount > balance) {
+            System.out.println("Ошибка: недостаточно средств");
+        } else {
+            this.balance -= amount;
+        }
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static int getTotalAccounts() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните totalAccounts
+        return totalAccounts;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -91,7 +105,7 @@ public class BankAccount {
     @Override
     public String toString() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: реализуйте формат выше
+        return String.format("[%s] %s: %.2f руб.", accountNumber, owner, balance); // TODO: реализуйте формат выше
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
