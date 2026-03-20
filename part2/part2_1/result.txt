@@ -1,0 +1,10 @@
+"C:\Program Files\BellSoft\LibericaJDK-20-Full\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\lib\idea_rt.jar=53398:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\242770\IdeaProjects\practic2\out\production\practice2 part2.part2_1.EmployeeBonus
+=== Расчёт бонусов ===
+Ольга | Оклад: 120000.0 | Бонус: 43000.0 | Итого: 163000.0
+Андрей | Оклад: 95000.0 | Бонус: 11400.0 | Итого: 106400.0
+Мария | Оклад: 100000.0 | Бонус: 12000.0 | Итого: 112000.0
+Стажёр Петя | Оклад: 30000.0 | Бонус: 10000.0 | Итого: 40000.0
+
+Общий бюджет: 421400 руб.
+
+Process finished with exit code 0
