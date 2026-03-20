@@ -31,32 +31,44 @@ public class EmployeeFixed {
      */
     public EmployeeFixed(String name, int age, double salary, String password) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.password = password;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     /** Верните name */
     public String getName() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return null; // TODO: верните name
+        return this.name;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     /** Верните age */
     public int getAge() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните age
+        return this.age;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     /** Верните salary */
     public double getSalary() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните salary
+        return this.salary;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     // Геттер для password НЕ создаём — пароль не должен покидать объект.
+
+    /**
+     * Возвращает роль сотрудника
+     */
+    public String getRole() {
+        // ▼ ВАШ КОД ЗДЕСЬ ▼
+        return "Employee";
+        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+    }
 
     /**
      * Повышает зарплату.
@@ -64,7 +76,7 @@ public class EmployeeFixed {
      */
     public void promote(double raise) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        this.salary += raise;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -74,7 +86,7 @@ public class EmployeeFixed {
      */
     public void printSummary() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        System.out.println(this.name + ", " + this.age + " лет, " + this.salary + " руб.");
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -88,7 +100,7 @@ public class EmployeeFixed {
      */
     public boolean authenticate(String input) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return false; // TODO: верните validatePassword(input)
+        return validatePassword(input);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }
