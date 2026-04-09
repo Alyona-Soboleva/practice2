@@ -25,38 +25,44 @@ public class RefactorStep1 {
         List<String> cities = Arrays.asList("Москва", "Берлин", "Токио", "Нью-Йорк", "Париж");
 
         // 1. Сортировка по длине → замените анонимный класс на лямбду
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // cities.sort((a, b) -> Integer.compare(a.length(), b.length()));
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        cities.sort((a, b) -> Integer.compare(a.length(), b.length()));
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 
         // 2. Вывод каждого элемента
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // cities.forEach(city -> System.out.println(city));
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        cities.forEach(city -> System.out.println(city));
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 
         // 3. Преобразование в верхний регистр
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Function<String, String> toUpper = s -> s.toUpperCase();
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        Function<String, String> toUpper = s -> s.toUpperCase();
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 
         // 4. Проверка длины > 5
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Predicate<String> isLong = s -> s.length() > 5;
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        Predicate<String> isLong = s -> s.length() > 5;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 
         // 5. Формирование строки с восклицательным знаком
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Function<String, String> exclaim = s -> s + "!";
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        Function<String, String> exclaim = s -> s + "!";
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 
         // 6. Создание нового списка
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Supplier<List<String>> listFactory = () -> new ArrayList<>();
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        Supplier<List<String>> listFactory = () -> new ArrayList<>();
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 
         // Использование (скопируйте из RefactorOriginal и адаптируйте)
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        List<String> result = listFactory.get();
+        for (String city : cities) {
+            if (isLong.test(city)) {
+                result.add(toUpper.apply(city));
+            }
+        }
+        System.out.println("Длинные города: " + result);
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 }
