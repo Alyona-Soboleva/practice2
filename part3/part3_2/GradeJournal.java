@@ -27,10 +27,10 @@ public class GradeJournal {
     static String[] names = {"Алиса", "Борис", "Вера", "Глеб"};
 
     static int[][] grades = {
-        {5, 4, 5, 5, 3},       // Алиса
-        {3, 3, 4},             // Борис
-        {5, 5, 5, 5, 5, 4},   // Вера
-        {4, 3, 4, 5}           // Глеб
+            {5, 4, 5, 5, 3},       // Алиса
+            {3, 3, 4},             // Борис
+            {5, 5, 5, 5, 5, 4},   // Вера
+            {4, 3, 4, 5}           // Глеб
     };
 
     /**
@@ -40,9 +40,16 @@ public class GradeJournal {
      * Не забудьте привести к double перед делением.
      */
     public static double average(int[] grades) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: просуммируйте все элементы, разделите на (double) grades.length
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        if (grades == null || grades.length == 0) {
+            return 0.0;
+        }
+        int sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+        return (double) sum / grades.length;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -52,9 +59,18 @@ public class GradeJournal {
      * и обновляйте максимум.
      */
     public static int max(int[] grades) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: начните с grades[0], пройдите циклом, обновляйте максимум
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        if (grades == null || grades.length == 0) {
+            return 0;
+        }
+        int max = grades[0];
+        for (int grade : grades) {
+            if (grade > max) {
+                max = grade;
+            }
+        }
+        return max;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -64,9 +80,18 @@ public class GradeJournal {
      * и обновляйте минимум (if (grades[i] < min) min = grades[i];).
      */
     public static int min(int[] grades) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: начните с grades[0], пройдите циклом, обновляйте минимум
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        if (grades == null || grades.length == 0) {
+            return 0;
+        }
+        int min = grades[0];
+        for (int grade : grades) {
+            if (grade < min) {
+                min = grade;
+            }
+        }
+        return min;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     // === Метод main ===
@@ -74,11 +99,12 @@ public class GradeJournal {
     public static void main(String[] args) {
         System.out.println("=== Журнал оценок ===");
 
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
+        // ▼ ВАШ КОД (уже правильный) ▼
         for (int i = 0; i < names.length; i++) {
             System.out.printf("%-8s| Оценок: %d | Средний: %.2f | Мин: %d | Макс: %d%n",
                     names[i], grades[i].length, average(grades[i]), min(grades[i]), max(grades[i]));
         }
+
         String bestName = names[0];
         double bestAvg = average(grades[0]);
         for (int i = 1; i < names.length; i++) {
