@@ -114,11 +114,14 @@ public class MatrixOperations {
      */
     public static int diagonalSum(int[][] matrix) {
         int sum = 0;
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-       // for (int i = 0; i < ?; i++) {
-       //     sum += matrix[?][?];
-        //}
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        // Диагональ существует только для квадратной матрицы
+        // Идём до минимальной размерности (строки или столбцы)
+        int size = Math.min(matrix.length, matrix[0].length);
+        for (int i = 0; i < size; i++) {
+            sum += matrix[i][i];
+        }
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
         return sum;
     }
 
