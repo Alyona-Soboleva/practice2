@@ -16,9 +16,9 @@ public record CryptoWallet(String address, String currency) implements PaymentMe
      */
     @Override
     public String process(double amount) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: верните "Криптоплатёж (" + currency + "): " + amount + " руб."
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        return String.format("Криптоплатёж (%s): %.2f руб.", currency, amount);
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -28,8 +28,8 @@ public record CryptoWallet(String address, String currency) implements PaymentMe
      */
     @Override
     public double fee(double amount) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните amount * 0.015
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        return amount * 0.015;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 }
