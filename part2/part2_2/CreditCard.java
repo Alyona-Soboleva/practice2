@@ -1,5 +1,6 @@
 package part2.part2_2;
 
+
 /**
  * Задание 2.2 — Кредитная карта (реализация PaymentMethod)
  *

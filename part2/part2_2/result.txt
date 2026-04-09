@@ -1,3 +1,4 @@
+C:\Users\242770\.jdks\ms-21.0.10\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\lib\idea_rt.jar=52514:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\242770\IdeaProjects\practice2\out\production\practice2 part2.part2_2.PaymentDemo
 Оплата картой *4444: 10000,00 руб.
   Комиссия: 200,00 руб.
   Тип: Банковская карта
