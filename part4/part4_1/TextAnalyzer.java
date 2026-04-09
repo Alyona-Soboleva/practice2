@@ -44,9 +44,9 @@ public class TextAnalyzer {
      * Подсказка: return text.split(" ").length;
      */
     public int wordCount() {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните text.split(" ").length
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        return text.split(" ").length;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -56,15 +56,16 @@ public class TextAnalyzer {
      * пройдите циклом, сравнивая длины.
      */
     public String longestWord() {
-
         String[] words = text.split(" ");
         String best = words[0];
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        for (String word : words) {
+            if (word.length() > best.length()) {
+                best = word;
+            }
+        }
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
         return best;
-
     }
 
     /**
@@ -84,7 +85,6 @@ public class TextAnalyzer {
             sb.append(words[i]);
         }
         return sb.toString();
-
     }
 
     /**
@@ -96,7 +96,7 @@ public class TextAnalyzer {
      *   3. Пока index != -1: увеличьте счётчик, сдвиньте fromIndex = index + 1.
      */
     public int countOccurrences(String target) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
         String lower = text.toLowerCase();
         String t = target.toLowerCase();
         int count = 0;
@@ -106,8 +106,8 @@ public class TextAnalyzer {
             count++;
             from = idx + 1;
         }
-        return 0; // ???
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        return count;
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -119,10 +119,8 @@ public class TextAnalyzer {
      *   3. Сравните с реверсом: new StringBuilder(clean).reverse().toString()
      */
     public boolean isPalindrome() {
-
         String clean = text.replaceAll("[^a-zA-Zа-яА-ЯёЁ]", "").toLowerCase();
         return clean.contentEquals(new StringBuilder(clean).reverse());
-
     }
 
     @Override

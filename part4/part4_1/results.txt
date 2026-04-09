@@ -1,0 +1,13 @@
+C:\Users\242770\.jdks\ms-21.0.10\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\lib\idea_rt.jar=52740:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.0.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\242770\IdeaProjects\practice2\out\production\practice2 part4.part4_1.TextAnalyzer
+Текст: Java Programming is Fun and Java is Powerful
+Слов: 8
+Самое длинное слово: Programming
+Слова наоборот: Powerful is Java and Fun is Programming Java
+'Java' встречается: 2 раз(а)
+'is' встречается: 2 раз(а)
+Палиндром: false
+
+Текст: А роза упала на лапу Азора
+Палиндром: true
+
+Process finished with exit code 0
