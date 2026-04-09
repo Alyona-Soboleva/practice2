@@ -34,17 +34,17 @@ public class RecordEnumDemo {
         enum Unit { CELSIUS, FAHRENHEIT, KELVIN }
 
         Temperature {
-            // TODO: переведите value в kelvin и проверьте >= 0
-            // Алгоритм:
-            //   1. Вычислите double kelvin = switch (unit) {
-            //        case CELSIUS    -> value + 273.15;
-            //        case FAHRENHEIT -> (value - 32) * 5.0/9.0 + 273.15;
-            //        case KELVIN     -> value;
-            //      };
-            //   2. if (kelvin < 0) throw new IllegalArgumentException("Ниже абсолютного нуля");
-            // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-            // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+            // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+            // Переводим значение в Кельвины для проверки абсолютного нуля
+            double kelvin = switch (unit) {
+                case CELSIUS -> value + 273.15;
+                case FAHRENHEIT -> (value - 32) * 5.0 / 9.0 + 273.15;
+                case KELVIN -> value;
+            };
+            if (kelvin < 0) {
+                throw new IllegalArgumentException("Температура ниже абсолютного нуля (0 K)");
+            }
+            // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
         }
 
         /**
@@ -55,7 +55,7 @@ public class RecordEnumDemo {
          *   2. Из Цельсия переведите в целевую единицу.
          */
         public Temperature convertTo(Unit targetUnit) {
-            // ▼ ВАШ КОД ЗДЕСЬ ▼
+            // ▼ ВАШ КОД УЖЕ ПРАВИЛЬНЫЙ ▼
             double celsius = switch (unit) {
                 case CELSIUS -> value;
                 case FAHRENHEIT -> (value - 32) * 5.0 / 9.0;
@@ -77,7 +77,7 @@ public class RecordEnumDemo {
          */
         @Override
         public String toString() {
-            // ▼ ВАШ КОД ЗДЕСЬ ▼
+            // ▼ ВАШ КОД УЖЕ ПРАВИЛЬНЫЙ ▼
             String suffix = switch (unit) {
                 case CELSIUS -> "°C";
                 case FAHRENHEIT -> "°F";
@@ -109,26 +109,36 @@ public class RecordEnumDemo {
         ADD {
             @Override
             public double apply(double a, double b) {
-                return 0; // TODO: верните a + b
+                // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+                return a + b;
+                // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
             }
         },
         SUBTRACT {
             @Override
             public double apply(double a, double b) {
-                return 0; // TODO: верните a - b
+                // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+                return a - b;
+                // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
             }
         },
         MULTIPLY {
             @Override
             public double apply(double a, double b) {
-                return 0; // TODO: верните a * b
+                // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+                return a * b;
+                // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
             }
         },
         DIVIDE {
             @Override
             public double apply(double a, double b) {
-                // TODO: проверьте b != 0, иначе throw new ArithmeticException("Деление на ноль")
-                return 0; // TODO: верните a / b (с проверкой на ноль)
+                // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+                if (b == 0) {
+                    throw new ArithmeticException("Деление на ноль");
+                }
+                return a / b;
+                // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
             }
         };
 
