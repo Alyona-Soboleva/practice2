@@ -3,7 +3,7 @@ package part2.part2_2;
 /**
  * Задание 2.2 — Банковский перевод (реализация PaymentMethod)
  *
- * Формат process: "Перевод через БАНК: Z руб."
+ * Формат process: "Перевод через БАНК: Z руб. "
  * Комиссия: фиксированные 50 руб.
  */
 public record BankTransfer(String bankName, String iban) implements PaymentMethod {
