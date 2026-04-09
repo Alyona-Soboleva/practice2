@@ -1,0 +1,9 @@
+Уровень логирования: INFO
+
+[19:07:53] [DatabaseService] Подключение к jdbc:postgresql://localhost/mydb
+[19:07:53] [DatabaseService] Подключение установлено
+
+[19:07:53] [AuthService] Вход пользователя: admin — успешно
+[19:07:53] [AuthService] ОШИБКА: Вход пользователя: hacker — отказано
+
+Process finished with exit code 0

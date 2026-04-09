@@ -31,9 +31,9 @@ public interface Loggable {
      * System.out.println("[" + formatTimestamp() + "] [" + getComponentName() + "] " + message);
      */
     default void log(String message) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        System.out.println("[" + formatTimestamp() + "] [" + getComponentName() + "] " + message);
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -42,9 +42,9 @@ public interface Loggable {
      * Подсказка: вызовите log("ОШИБКА: " + message);
      */
     default void logError(String message) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        log("ОШИБКА: " + message);
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -54,9 +54,9 @@ public interface Loggable {
      * return LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
      */
     private String formatTimestamp() {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: верните LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"))
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        return LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 
     /**
@@ -66,8 +66,8 @@ public interface Loggable {
      * Подсказка: return "INFO";
      */
     static String getLogLevel() {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: верните "INFO"
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+        return "INFO";
+        // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
     }
 }
