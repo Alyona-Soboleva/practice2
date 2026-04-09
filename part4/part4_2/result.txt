@@ -1,0 +1,40 @@
+=== Исследование String Pool ===
+
+Сравнение s1 и s2 (литералы):
+  Прогноз: true (оба из пула)
+  s1 == s2      : true
+  s1.equals(s2) : true
+
+Сравнение s1 и s3 (литерал vs new String):
+  Прогноз: false (разные объекты в памяти)
+  s1 == s3      : false
+  s1.equals(s3) : true
+
+Сравнение s3 и s4 (new String vs new String):
+  Прогноз: false (разные объекты в куче)
+  s3 == s4      : false
+  s3.equals(s4) : true
+
+Сравнение s1 и s5 (литерал vs intern()):
+  Прогноз: true (s3.intern() вернул ссылку из пула)
+  s1 == s5      : true
+  s1.equals(s5) : true
+
+Сравнение s1 и s6 (литерал vs конкатенация литералов):
+  Прогноз: true (компилятор сложил "Hel" + "lo" в "Hello" из пула)
+  s1 == s6      : true
+  s1.equals(s6) : true
+
+Сравнение s1 и s7 (литерал vs конкатенация с переменной):
+  Прогноз: false (конкатенация с переменной создаёт новый объект)
+  s1 == s7      : false
+  s1.equals(s7) : true
+
+=== StringBuilder ===
+
+Сравнение s1 и s8 (литерал vs StringBuilder):
+  Прогноз: false (StringBuilder создаёт новый объект в куче)
+  s1 == s8      : false
+  s1.equals(s8) : true
+
+Process finished with exit code 0
