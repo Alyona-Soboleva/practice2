@@ -108,9 +108,9 @@ public class ValidationFramework {
                     throw new RuntimeException(e);
                 }
             }
-            // ▼ ВАШ КОД ЗДЕСЬ ▼
-            return new ArrayList<>();//???????????
-            // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+            // ▼ ИСПРАВЛЕННЫЙ КОД ▼
+            return errors;
+            // ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
         }
     }
 

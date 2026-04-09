@@ -23,10 +23,15 @@ import java.lang.reflect.Method;
  * Затем исправьте две строки и запустите снова.
  */
 
-// TODO: замените SOURCE на правильную политику, чтобы аннотация была доступна через Reflection
-// Подсказка: SOURCE → стирается при компиляции, CLASS → только в байткоде, RUNTIME → доступна через Reflection
-@Retention(RetentionPolicy.SOURCE)
+// ▼ ИСПРАВЛЕННЫЙ КОД ▼
+// RUNTIME — аннотация доступна через Reflection во время выполнения программы
+@Retention(RetentionPolicy.RUNTIME)
+// ▲ КОНЕЦ ИСПРАВЛЕННОГО КОДА ▲
 // Вопрос: почему здесь указано METHOD? Что будет, если заменить на TYPE или FIELD?
+// Ответ: METHOD означает, что аннотация применяется только к методам.
+// Если заменить на TYPE, аннотация будет применяться к классам.
+// Если заменить на FIELD, аннотация будет применяться к полям.
+// Для методов нужна именно METHOD.
 @Target(ElementType.METHOD)
 @interface TestInfo {
     String author();
